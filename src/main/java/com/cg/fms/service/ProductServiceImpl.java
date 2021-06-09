@@ -1,17 +1,15 @@
-package com.cg.fms.services;
+package com.cg.fms.service;
 import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-
 import com.cg.fms.exception.ProductNotFoundException;
 import com.cg.fms.entities.Product;
 import com.cg.fms.repository.ProductRepository;
+import com.cg.fms.service.ProductServiceImpl;
 import org.slf4j.LoggerFactory;
-import com.cg.fms.services.ProductServiceImpl;
 
 @Service
 public class ProductServiceImpl implements IProductService{

@@ -26,12 +26,12 @@ public class SwaggerConfig {
 	}
 
 	private Predicate<String> postPaths() {
-		return or( regex("/products/.*"));
+		return or( regex("/products/.*"),regex("/customers/.*"),regex("/cart/.*"),regex("/orders/.*"),regex("/contracts/.*"),regex("/schedulers/.*"));
 	}
 
 	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder().title("Product API").description("RaJ API reference for developers")
-				.termsOfServiceUrl("http://RAJ.com").license("RaJ License").licenseUrl("raJ@gmail.com")
+		return new ApiInfoBuilder().title("Forestry Management System API").description("API reference for developers")
+				.termsOfServiceUrl("http://RAJ.com").license("Product License").licenseUrl("raJ@gmail.com")
 				.version("1.0").build();
 	}
 

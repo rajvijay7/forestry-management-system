@@ -13,26 +13,24 @@ import lombok.NoArgsConstructor;
 @Data                                      
 @NoArgsConstructor                        
 @Entity                                   
-@Table(name = "Product_tbl")             
-public class Product {
+@Table(name = "Order_tbl")             
+public class Order {
 	
 	@Id                                
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+	private Integer ordernumber;
 	
-	@Column(name = "name")       
+	@Column(name = "deliveryplace")       
 	@NotNull
-	@Size(min = 3, message = "Product Name should have mininum 3 characters!!")
-	private String name;
+	private String deliveryplace;
+	
+	@Column(name = "deliverydate")
+	@NotNull
+	private String deliverydate;
 	
 	@Column(name = "quantity")
 	@NotNull
 	private String quantity;
-	
-	@Column(name = "description")
-	@NotNull
-	@Size(min = 15, message = "Product Description should have mininum 15 characters!!")
-	private String description;
 	
 	
 }

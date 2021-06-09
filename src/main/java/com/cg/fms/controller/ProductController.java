@@ -13,10 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.cg.fms.services.IProductService;
 import com.cg.fms.entities.Product;
 import com.cg.fms.exception.ProductNotFoundException;
+import com.cg.fms.service.IProductService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,8 +24,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/products")
 public class ProductController {
 
-	
-	
 	Logger logger = LoggerFactory.getLogger(ProductController.class);
 	
 	@Autowired
@@ -36,7 +33,7 @@ public class ProductController {
 	
 	//get product (by id)//
 	
-	@GetMapping("/getById/{id}")
+	@GetMapping("/getById/{id}") 
 	@ApiOperation("Get Product By ID")
 	public Product fetchById(@PathVariable int id) throws NumberFormatException, ProductNotFoundException {
 		logger.info("Inside fetchById %s", id);

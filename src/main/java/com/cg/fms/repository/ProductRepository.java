@@ -13,5 +13,17 @@ import com.cg.fms.entities.Product;
 public interface ProductRepository extends JpaRepository<Product, Integer>{
 
 	
-	//public Product fetchById(int id);
+	
+	
+	
+	 //Product getProduct(String product);
+	
+	// boolean addProduct(boolean product);
+	 
+	 //boolean updateProduct(boolean product);
+	 
+	// boolean deleteProduct(boolean product);
+	 
+	// List<Product> getAllProducts();
 }
+

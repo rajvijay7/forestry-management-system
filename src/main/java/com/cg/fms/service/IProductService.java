@@ -1,4 +1,4 @@
-package com.cg.fms.services;
+package com.cg.fms.service;
 
 import com.cg.fms.exception.ProductNotFoundException;
 import com.cg.fms.exception.ProductNotFoundException;
@@ -15,7 +15,6 @@ public interface IProductService {
 	
 	//get product by id//
 	Product fetchById(int id) throws ProductNotFoundException;
-	
 	
 	// adding a product //
 	Product addProduct(Product product);
