@@ -77,7 +77,7 @@ public class ContractController {
 	}
 	
 	
-	// get all product
+	
 	
 	@GetMapping("/getAll")
 	@ApiOperation("Fetch all Contract Details")
