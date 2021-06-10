@@ -66,7 +66,7 @@ public class ProductController {
 	
 	@DeleteMapping("/delete/{id}")
 	@ApiOperation("Delete an Existing Product")
-	public ResponseEntity<Void> delete(@PathVariable int id) throws ProductNotFoundException {
+	public ResponseEntity<Void> delete(@PathVariable int id) throws ProductNotFoundException,NumberFormatException{
 		logger.info("Deleting a product!!");
 		service.delProduct(id);
 		return ResponseEntity.status(HttpStatus.NO_CONTENT).build();

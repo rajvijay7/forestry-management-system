@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.cg.fms.exception.ProductNotFoundException;
+import com.cg.fms.exception.NumberFormatException;
 import com.cg.fms.entities.Product;
 import com.cg.fms.repository.ProductRepository;
 import com.cg.fms.service.ProductServiceImpl;
@@ -51,7 +52,7 @@ public class ProductServiceImpl implements IProductService{
 	// deleting a product
 	
 	@Override
-	public void delProduct(int id) throws ProductNotFoundException {
+	public void delProduct(int id) throws ProductNotFoundException{
 		Optional<Product> product = repository.findById(id);
 		if (!product.isPresent())
 			throw new ProductNotFoundException();
