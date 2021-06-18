@@ -6,11 +6,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.cg.fms.exception.ProductNotFoundException;
-import com.cg.fms.exception.NumberFormatException;
 import com.cg.fms.entities.Product;
 import com.cg.fms.repository.ProductRepository;
 import com.cg.fms.service.ProductServiceImpl;
-import org.slf4j.LoggerFactory;
+
 
 @Service
 public class ProductServiceImpl implements IProductService{
@@ -31,6 +30,7 @@ public class ProductServiceImpl implements IProductService{
 		return product.get();
 	}
 	
+
 	
 	// add a product //
 	

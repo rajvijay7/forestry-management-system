@@ -1,4 +1,7 @@
 package com.cg.fms.entities;
+import java.util.List;
+import java.util.stream.Collector;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,13 +13,13 @@ import javax.validation.constraints.Size;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data                                      
-@NoArgsConstructor                        
+@Data                                
+@NoArgsConstructor           
 @Entity                                   
-@Table(name = "Product_tbl")             
-public class Product {
+@Table(name = "Product_tbl")      
+    public class Product {
 	
-	@Id                                
+	@Id                               
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	
@@ -33,6 +36,7 @@ public class Product {
 	@NotNull
 	@Size(min = 15, message = "Product Description should have mininum 15 characters!!")
 	private String description;
+
 	
 	
 }

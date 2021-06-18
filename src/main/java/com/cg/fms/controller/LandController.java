@@ -1,9 +1,6 @@
 package com.cg.fms.controller;
-
 import java.util.List;
-
 import javax.validation.Valid;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,13 +14,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-
 import com.cg.fms.entities.Land;
-import com.cg.fms.exception.LandNotFoundException;
 import com.cg.fms.service.ILandService;
-
 import io.swagger.annotations.ApiOperation;
+
+
 @RestController
 @RequestMapping("/lands")
 public class LandController {
@@ -35,7 +30,7 @@ public class LandController {
     
 	@GetMapping("/getLand/{surveyNumber}")
 	@ApiOperation("Get Land By surveyNumber")
-	public Land getLand(@PathVariable String surveyNumber) throws LandNotFoundException {
+	public Land getLand(@PathVariable String surveyNumber) {
 		logger.info("Inside getLand %s", surveyNumber);
 		return service.getLand(surveyNumber);
 	}
@@ -62,7 +57,7 @@ public class LandController {
 	
 	@DeleteMapping("/delete/{surveyNumber}")
 	@ApiOperation("Delete an Existing Land Record")
-	public ResponseEntity<Void> delete(@PathVariable String surveyNumber ) throws LandNotFoundException{
+	public ResponseEntity<Void> delete(@PathVariable String surveyNumber ){
 	logger.info("Deleting a Land !!");
 	service.removeLandDetails(surveyNumber);
 	return ResponseEntity.status(HttpStatus.NO_CONTENT).build();

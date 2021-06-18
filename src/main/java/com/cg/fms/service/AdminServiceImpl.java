@@ -9,8 +9,6 @@ import org.springframework.stereotype.Service;
 
 import com.cg.fms.service.*;
 import com.cg.fms.entities.Admin;
-import com.cg.fms.exception.AdminNotFoundException;
-import com.cg.fms.exception.ProductNotFoundException;
 import com.cg.fms.repository.AdminRepository;
 import com.cg.fms.controller.AdminController;
 
@@ -24,7 +22,7 @@ public class AdminServiceImpl implements IAdminService {
 	private AdminRepository repository;
 	
 	@Override
-	public Admin getAdmin(String name) throws AdminNotFoundException{
+	public Admin getAdmin(String name) {
 		logger.info("inside getAdmin method of AdminServiceImpl");
 		return repository.findByName(name);
 		
@@ -32,7 +30,7 @@ public class AdminServiceImpl implements IAdminService {
 
 	@Override
 	public boolean addAdmin(Admin admin) {
-		Admin adm = repository.save(admin);
+		Admin adm= repository.save(admin);
 		return true;
 		
 	}
@@ -53,7 +51,7 @@ public class AdminServiceImpl implements IAdminService {
 	}
 
 	@Override
-	public Long deleteAdmin(String name) throws AdminNotFoundException {
+	public Long deleteAdmin(String name) {
 		
 		return repository.deleteByName(name);
 	}

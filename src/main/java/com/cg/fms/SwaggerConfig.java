@@ -1,14 +1,10 @@
 package com.cg.fms;
 
 import static com.google.common.base.Predicates.or;
-
 import static springfox.documentation.builders.PathSelectors.regex;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import com.google.common.base.Predicate;
-
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
@@ -26,9 +22,9 @@ public class SwaggerConfig {
 	}
 
 	private Predicate<String> postPaths() {
-		return or( regex("/products/.*"),regex("/customers/.*"),regex("/cart/.*"),regex("/orders/.*"),regex("/contracts/.*"),regex("/schedulers/.*"),regex("/admins/.*"),regex("/lands/.*"));
+		return or(regex("/products/.*"),regex("/customers/.*"),regex("/cart/.*"),regex("/orders/.*"),regex("/contracts/.*"),regex("/schedulers/.*"),regex("/admins/.*"),regex("/lands/.*"));
 	}
-
+	
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder().title("Forestry Management System API").description("API reference for developers")
 				.termsOfServiceUrl("http://RAJ.com").license("Product License").licenseUrl("raJ@gmail.com")

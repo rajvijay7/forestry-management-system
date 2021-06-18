@@ -11,6 +11,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -18,36 +19,30 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name="admin_tbl")
-
+@Table(name = "admin_tbl")
 
 public class Admin {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	public int id;
-	
-	
+
 	@NotNull
 	@Size(min = 7, message = "Password should have mininum 7 characters!!")
 	public String password;
-	
-	
+
 	@NotNull
 	@Size(min = 2, message = "Admin Name should have mininum 2 characters!!")
 	public String name;
-	
-	
-	
-	
-	
 
+	
+	@OneToMany(targetEntity = Land.class, cascade = CascadeType.ALL)
+	@JoinColumn(name = "al_fk", referencedColumnName = "id")
+	private List<Land> lands;
 }

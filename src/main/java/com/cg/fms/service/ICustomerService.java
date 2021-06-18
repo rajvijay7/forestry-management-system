@@ -1,10 +1,6 @@
 package com.cg.fms.service;
-
 import java.util.List;
-
 import org.springframework.stereotype.Service;
-
-//import com.cg.fms.dto.OrderResponse;
 import com.cg.fms.entities.Customer;
 import com.cg.fms.exception.CustomerNotFoundException;
 
@@ -25,6 +21,6 @@ public interface ICustomerService {
 
 	/*Customer getByFirstName(String firstName);*/
 
-	//public List<OrderResponse> getJoinInfo();
+	
 
 }

@@ -29,7 +29,7 @@ public class Customer {
 	private Integer id;
 	@Column(name = "password")
 	@NotNull
-	@Size(min = 6, message = " Password should have mininum 2 characters!!")
+	//@Size(min = 6, message = " Password should have mininum 2 characters!!")
 	private String Password;
 	@Column(name = "name")
 	@NotNull
@@ -50,8 +50,17 @@ public class Customer {
 //	@Pattern(regexp = "[9-7]{9}")
 	private long Contact;
 
-	/*@OneToMany(targetEntity = Product.class, cascade = CascadeType.ALL)
-	@JoinColumn(name = "cp_fk", referencedColumnName = "id")
-	private List<Product> products;*/
+	@OneToMany(targetEntity = Order.class, cascade = CascadeType.ALL)
+	@JoinColumn(name = "co_fk", referencedColumnName = "id")
+	private List<Order> orders;
+	
+	
+	@OneToMany(targetEntity = Cart.class, cascade = CascadeType.ALL)
+	@JoinColumn(name = "cc_fk", referencedColumnName = "id")
+	private List<Cart> carts;
+	
+	
+
+
 
 }

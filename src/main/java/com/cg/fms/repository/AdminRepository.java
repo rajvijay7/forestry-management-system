@@ -9,21 +9,13 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.cg.fms.entities.Admin;
+
 @Repository
 @Transactional
-public interface AdminRepository extends JpaRepository <Admin,Integer> {
+public interface AdminRepository extends JpaRepository<Admin, Integer> {
 
 	public Admin findByName(String name);
-	
+
 	public Long deleteByName(String name);
 
-	
-
-	
-
-	
-	
-	
-	
-  
 }

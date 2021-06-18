@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-//import com.cg.fms.dto.OrderResponse;
+
 import com.cg.fms.entities.Customer;
 import com.cg.fms.exception.CustomerNotFoundException;
 import com.cg.fms.service.ICustomerService;
@@ -35,7 +35,12 @@ public class CustomerController {
 	@Autowired
 	private ICustomerService service;// CustomerService is a dependency of CustomerContoller
 
-	
+//	@GetMapping("/{name}")
+//	@ApiOperation("Greetings API")
+//	public String greetings(@PathVariable String name) {
+//		logger.info("Inside greetings!!");
+//		return "<h1>Welcome to Spring Boot " + name + "</h1>";
+//	}
 
 	@GetMapping("/getById/{id}")
 	@ApiOperation("Get Customer By ID")
@@ -84,9 +89,9 @@ public class CustomerController {
 		return service.getByLastName(lname);
 	}*/
 
-	/*@GetMapping("/getJoinInfo")
-	public List<OrderResponse> getJoinInfo() {
-		return service.getJoinInfo();
-	}*/
+//	@GetMapping("/getJoinInfo")
+//	public List<OrderResponse> getJoinInfo() {
+//		return service.getJoinInfo();
+//	}
 
 }

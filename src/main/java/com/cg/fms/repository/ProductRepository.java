@@ -15,15 +15,7 @@ public interface ProductRepository extends JpaRepository<Product, Integer>{
 	
 	
 	
-	
-	 //Product getProduct(String product);
-	
-	// boolean addProduct(boolean product);
+
 	 
-	 //boolean updateProduct(boolean product);
-	 
-	// boolean deleteProduct(boolean product);
-	 
-	// List<Product> getAllProducts();
 }
 

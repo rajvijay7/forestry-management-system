@@ -30,7 +30,6 @@ public class ProductController {
 	private IProductService service;
 	
 	
-	
 	//get product (by id)//
 	
 	@GetMapping("/getById/{id}") 
@@ -51,6 +50,7 @@ public class ProductController {
 		return new ResponseEntity<>(prod, HttpStatus.CREATED);
 	}
 	
+
 	
 	//update a product
 	

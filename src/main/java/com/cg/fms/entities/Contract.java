@@ -18,7 +18,9 @@ public class Contract {
 	
 	@Id                                
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer contractnumber;
+	@Column(name = "contractnumber") 
+	@NotNull
+	private Integer id;
 	
 	@Column(name = "deliveryplace")       
 	@NotNull

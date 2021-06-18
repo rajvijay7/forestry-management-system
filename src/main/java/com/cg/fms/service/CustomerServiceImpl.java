@@ -8,7 +8,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-//import com.cg.fms.dto.OrderResponse;
 import com.cg.fms.entities.Customer;
 import com.cg.fms.exception.CustomerNotFoundException;
 import com.cg.fms.repository.CustomerRepository;
@@ -55,12 +54,7 @@ public class CustomerServiceImpl implements ICustomerService {
 		return customer.get();
 	}
 
-	/*@Override
-	public List<OrderResponse> getJoinInfo() {
-		// TODO Auto-generated method stub
-		return null;
-	}*/
-
+	
 	/*@Override
 	public Customer getByLastName(String lastName) {
 		return repository.findByLastName(lastName);

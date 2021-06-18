@@ -1,4 +1,5 @@
 package com.cg.fms.service;
+
 import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
@@ -10,16 +11,13 @@ import com.cg.fms.entities.Contract;
 import com.cg.fms.repository.ContractRepository;
 
 @Service
-public class ContractServiceImpl implements IContractService{
-	
+public class ContractServiceImpl implements IContractService {
+
 	Logger logger = LoggerFactory.getLogger(ContractServiceImpl.class);
-	
+
 	@Autowired
 	private ContractRepository repository;
 
-	
-
-	
 	@Override
 	public Contract fetchById(int contractnumber) throws ContractNotFoundException {
 		Optional<Contract> contract = repository.findById(contractnumber);
@@ -27,29 +25,19 @@ public class ContractServiceImpl implements IContractService{
 			throw new ContractNotFoundException();
 		return contract.get();
 	}
-	
-	
-	
-	
+
 	@Override
 	public Contract addContract(Contract contract) {
 		logger.info("inside addContract method of ContractServiceImpl");
 		return repository.save(contract);
-		
-		
+
 	}
-	
-	
-	
-	
+
 	@Override
 	public void updateContract(Contract contract) {
 		repository.save(contract);
 	}
-	
-	
-	
-	
+
 	@Override
 	public void delContract(int contractnumber) throws ContractNotFoundException {
 		Optional<Contract> contract = repository.findById(contractnumber);
@@ -58,10 +46,7 @@ public class ContractServiceImpl implements IContractService{
 
 		repository.deleteById(contractnumber);
 	}
-		
-	
-	
-	
+
 	@Override
 	public List<Contract> fetchAll() {
 		return repository.findAll();

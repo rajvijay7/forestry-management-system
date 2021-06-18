@@ -22,7 +22,6 @@ import org.springframework.context.annotation.Configuration;
 
 import com.cg.fms.controller.AdminController;
 import com.cg.fms.entities.Admin;
-import com.cg.fms.exception.AdminNotFoundException;
 import com.cg.fms.service.IAdminService;
 import com.cg.fms.service.AdminServiceImpl;
 import com.cg.fms.controller.AdminController;
@@ -48,7 +47,7 @@ public class AdminController {
 	
 	@GetMapping("/getAdmin/{adminName}")
 	@ApiOperation("Get Admin By Name")
-	public Admin getAdmin(@PathVariable String adminName) throws AdminNotFoundException {
+	public Admin getAdmin(@PathVariable String adminName) {
 		logger.info("Inside getAdminName %s", adminName);
 		return service.getAdmin(adminName);
 	}
@@ -79,7 +78,7 @@ public class AdminController {
 	
 	@DeleteMapping("/delete/{name}")
 	@ApiOperation("Delete an Existing Admin Record")
-	public Long delete(@PathVariable String name) throws AdminNotFoundException {
+	public Long delete(@PathVariable String name)  {
 		logger.info("Deleting a admin!!");
 		return service.deleteAdmin(name);
 	}

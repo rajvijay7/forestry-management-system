@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import com.cg.fms.entities.Contract;
 
-
 @Repository
 public interface ContractRepository extends JpaRepository<Contract, Integer> {
 
